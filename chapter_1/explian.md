@@ -3,9 +3,13 @@
 - Author: Heng Yin
 - Date: 17 Feb
 
-<code>std::cout << "The sum of " << v1;  
+'''cpp
+
+std::cout << "The sum of " << v1;  
  << " and " << v2;
-<< " is " << v1 + v2 << std::endl;</code>
+<< " is " << v1 + v2 << std::endl;
+
+'''
 
 ## If the program is legal, what does it do?
 
