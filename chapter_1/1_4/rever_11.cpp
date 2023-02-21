@@ -1,6 +1,6 @@
 // Exercise 1.11: 
 // Write a program that prompts the user for two integers.
-// Print each number in the range specified by those two integers
+// Print each number in the range specified by those two interegers
 // 
 // Author: Heng Yin
 // Date: 19 Feb 2023
@@ -10,18 +10,18 @@ using namespace std;
 
 int main()
 {
-  int low=0, high=0, val=0;
+  int fir_num=0, sec_num=0, val=0;
 
   cout << "Input two integer number" << endl;
-  cin >> low >> high;
-  if (low > high) {
-    val = low - 1;
-    low = high; 
-  } else val = high - 1;
+  cin >> fir_num >> sec_num;
+  if (fir_num > sec_num) {
+    val = sec_num + 1;
+    sec_num = fir_num;
+  } else val = fir_num + 1;
   
-  while (val > low) {
+  while (val < sec_num) {
     cout << val << " ";
-    val--;
+    val++;
   }
     return 0;
 }
