@@ -24,3 +24,7 @@ int main()
   return 0;
 
 }
+
+// summary: 
+// 1. if error occurs return -1
+// 2. not need use 3 Sales_items.
