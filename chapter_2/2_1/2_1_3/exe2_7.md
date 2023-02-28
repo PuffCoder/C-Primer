@@ -17,7 +17,7 @@ LF: empty line
 (c) 1024f
 
 // 1024.0
-Error!
+      Error!
 
 (d) 3.14L
-3.14
+      3.14
