@@ -2,58 +2,58 @@ Exercise 2.5: Determine the type of each of the following literals. Explain the 
 
 - Author: Heng Yin
 - Date: 28 Feb 2023
-
-a.  
- 'a' -> char
-character literal
+---
+### a.  
+'a' -> char
+ - character literal
 
 L'a' -> wchar
-wide character
+ - wide character
 
 "a" -> chat
-string literal
+ -  string literal
 
 L"a" -> wchar
-string wide character literal
-
-b.
+ -  string wide character literal
+---
+### b.
 10 -> int
-decimal
+ - decimal
 
 10u -> unsign int
-unsiged dicimal
+ -  unsiged dicimal
 
 10L -> long int
-long decimal
+ -  long decimal
 
 10uL -> unsign long int
-unsigned long decimal
+ -  unsigned long decimal
 
 012 -> int
-octal
+ -  octal
 
 0xC -> hexdigal
-hexadecimal
-
-c.
+ -  hexadecimal
+---
+### c.
 3.14 -> float
-double
+  - double
 
 3.14f -> float
-float
+ -  float
 
 3.14L -> double
-long double
-
-d.
+  - long double
+---
+### d.
 10 -> int
-decimal
+  - decimal
 
 10u -> unsign int
-unsigned decimal
+ -  unsigned decimal
 
-10. -> float
-    double
+ 10. -> float
+ - double
 
 10e-2 -> double
-double
+ -  double
