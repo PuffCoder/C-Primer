@@ -19,7 +19,13 @@ int main()
   cout << "The third letter in " << charr2 << " is " << charr2[2] << endl;
   cout << "The third letter in " << str2 << " is " << str2[2] << endl;
 
-  cout << sizeof(charr2) << sizeof(str2) << endl;
+  // cout << sizeof(charr2) << sizeof(str2) << endl;
+  cout << "chat type " << charr1 << endl;
+  cout << "string " << str1 << endl;
+  charr1[1] = '\0';
+  str1[1] = '\0';
+  cout << "chat type " << charr1 << endl;
+  cout << "string " << str1 << endl;
 
     return 0;
 }

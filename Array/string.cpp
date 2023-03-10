@@ -9,7 +9,7 @@ int main()
   char name1[Size];
   char name2[Size] = "C++owboy";
 
-  cout << sizeof(name2) << endl;
+  // cout << sizeof(name2) << endl;
 
   cout << "Howdy! I'm " << name2;
   cout << "! What's your name?\n";
