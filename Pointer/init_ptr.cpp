@@ -1,5 +1,5 @@
-// Exercise 1_1
-//
+// init_ptr.cpp 00 initialize a pointer
+// listing 4_16
 // Author : Heng Yin
 // Date : 11 March 2023
 

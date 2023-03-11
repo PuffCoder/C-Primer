@@ -1,5 +1,5 @@
-// Exercise 1_1
-//
+// pointer.cpp  -- our first pointer variable
+// listing 4_15
 // Author : Heng Yin
 // Date : 11 March 2023
 
