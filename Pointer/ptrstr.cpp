@@ -8,13 +8,13 @@ using namespace std;
 
 int main() 
 {
-  char animal[20] = "bear";
-  const char* bird = "wren";
+  char animal[20] = "bear";  
+  const char* bird = "wren";  // bird is a ptr
   char *ps;  
 
   cout << animal << " and " ;
   cout << bird << "\n";
-  // cout << ps << "\n";
+  cout << ps << "\n";
 
   cout << "Enter a kind of animal: ";
   cin >> animal;
@@ -25,7 +25,8 @@ int main()
   cout << animal << " at " << (int *) animal << endl;
   cout << ps << " at " << (int *) ps << endl;
 
-  ps = new char[strlen(animal) + 1]; 
+  // ps = new char[strlen(animal) + 1]; 
+  ps = new char[strlen(animal) ]; 
   strcpy(ps, animal);
 
   cout << "After using strcpy():\n";
