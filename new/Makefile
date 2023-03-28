@@ -1,9 +1,10 @@
-CXX = g++ 
-CXXFLAGS = -Wall -Werror -std=c++11
+CXX = clang++ 
+# CXXFLAGS = -Wall -Werror -std=c++11
+CXXFLAGS = -std=c++11
 LDFLAGS = 
 LIBS = 
 
-SRCS = mixtypes.cpp
+SRCS = choices.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = myprogram
 
