@@ -1,3 +1,7 @@
+// Listing 4.6
+// numstr.cpp -- following number input with line input
+// Date: Mar XX 
+//
 #include <iostream>
 using namespace std;
 
