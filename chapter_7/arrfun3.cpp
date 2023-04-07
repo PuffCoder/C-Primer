@@ -6,8 +6,8 @@
 using namespace std;
 
 const int Max = 5;
-// functino prototypes
 
+// functino prototypes
 int fill_array(double ar[], int limit);
 void show_array(const double ar[], int n); // don't change data
 void revalue(double r, double ar[], int n);
@@ -54,14 +54,32 @@ int fill_array(double ar[], int limit)
       while (cin.get() != '\n')
         continue;
       cout << "Bad input: input process terminated. \n";
-      break;
-        } else if (temp < 0)  // signal to terminate
-    break;
-    ar[i] = temp;
-    }
+          break;
+      } else if (temp < 0)  // signal to terminate
+          break;
+        ar[i] = temp;
+  }
     return i;
 }
 
+// the following function can use, but not alter, 
+// the array whose address is ar
+
+void show_array(const double ar[], int n)
+{
+  for (int i = 0; i < n; i++)
+       {
+       cout << "Property #" << (i +1)<< ": $";
+       cout << ar[i] << endl;
+  }
+}
+
+// mutiplies each element of ar[] by r
+void revalue(double r, double ar[], int n)
+{
+     for (int i = 0; i < n; i++)
+     ar[i] *= r;
+}
 
 
 
