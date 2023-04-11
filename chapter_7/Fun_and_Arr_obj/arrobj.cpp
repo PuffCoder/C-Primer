@@ -23,7 +23,6 @@ int main()
   fill(&expenses);
   show(expenses);
   return 0;
-
 }
 
 void fill(array<double, Seasons>* pa)
