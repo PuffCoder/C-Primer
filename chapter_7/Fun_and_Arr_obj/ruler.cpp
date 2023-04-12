@@ -28,6 +28,7 @@ int main()
      for (int j = 1; j < Len - 2; j++)
       ruler[j] = ' '; // reset to blank ruler
   }
+  // cout << ruler << endl;
   return 0;
 }
 
