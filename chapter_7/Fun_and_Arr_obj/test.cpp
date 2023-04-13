@@ -30,9 +30,9 @@ int main()
   const double *(*pa[3])(const double *, int) = {f1,f2,f3};
   // but it does not for initializing to a single value
   // pb a pointer to first element of pa
-  auto pb = pa;
+  // auto pb = pa;
   // pre-C++ 11 can use the following code insted
-  // const double *(**pb)(const double *, int) = pa;
+  const double *(**pb)(const double *, int) = pa;
   cout << "\nUsing an array of pointers to functions:\n";
   cout << " Address Value\n";
   for (int i = 0; i < 3; i++)
@@ -47,9 +47,9 @@ int main()
   cout << "\nUsing pointers to an array of pointers:\n";
   cout << " Address Value\n";
   // easy way to declare pc
-  auto pc = &pa;
+  // auto pc = &pa;
   // pre-C++ 11 can use the following code instead
-  // const double *(*(*pc)[3])(const double *, int) = &pa;
+  const double *(*(*pc)[3])(const double *, int) = &pa;
   cout << (*pc)[0](av,3) << ": " << *(*pc)[0](av,3) << endl;
   // hard way to declare pd
   const double *(*(*pd)[3])(const double *, int) = &pa;
