@@ -1,8 +1,13 @@
-// 6. Why don’t you use the const qualifier for function arguments that are one of the fundamental type
-// Date : 15 April 2023
+// 12.
+// Date : 16 April 2023
 
 #include <iostream>
 using namespace std;
+
+struct applicant {
+  char name[30];
+  int credit_ratings[3];
+};
 
 int main() 
 {
