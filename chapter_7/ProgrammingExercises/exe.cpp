@@ -4,8 +4,48 @@
 #include <iostream>
 using namespace std;
 
+double* enterGolf(double* arr, int Size);
+double meanVal(double *arr, int Size);
+void display(double*arr,int Size);
 int main() 
 {
+  double Arr[] = {0};
+  double* Sco ;
+  Sco = enterGolf(Arr, 10);
+  display(Arr, 10);
+  double res = 0;
+  res = meanVal(Sco, 10);
+  cout << "the mean value is " << res << endl;
 
 
 }
+double* enterGolf( double* arr, int Size)
+{
+  for(int i =0; i< Size; i++)
+  {
+    cout << "Enter number " << i +1 << " Score" << endl;
+    cin >> arr[i];
+  }
+  return arr;
+}
+
+double meanVal(double *arr, int Size)
+{
+  double mean = 0;
+  for(int i = 0; i<Size;i++)
+    mean += arr[i];
+  return mean/Size;
+}
+
+
+void display(double* arr, int Size)
+{
+  cout << "Display Result" << endl;
+  for(int i = 0; i<Size; i++)
+    {
+      cout << arr[i] << endl;
+    }
+}
+
+
+
