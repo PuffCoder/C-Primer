@@ -16,12 +16,23 @@ struct box
 };
 
 void boxInfo(box a);
+void volumeInfo(box* a); // b. 
 
 int main() 
 {
   box BB = {"Master Wang", 1.1, 2.2, 3.3};
+  BB.volume =  111;
+  boxInfo(BB);
+  // box * ptr = NULL;
+  // ptr = &BB;
+  volumeInfo(&BB);
   boxInfo(BB);
 
+
+}
+void volumeInfo(box* a)
+{
+  a->volume = a->height * a->width * a->length;
 
 }
 
@@ -32,7 +43,8 @@ void boxInfo(box a)
   cout << "Box maker: " << a.maker << endl;
   cout << "Box detail: H, W, L: "<< endl;
   cout << a.height << " " << a.width << " " << a.length << endl;
-  a.volume = a.height * a.width * a.length;
+  // a.volume = a.height * a.width * a.length;
+  // a.volume =  111;
   cout << "Volume: " << a.volume << endl;
 }
 
