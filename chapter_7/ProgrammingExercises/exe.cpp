@@ -1,51 +1,38 @@
-// 2. Write a program that asks the user to enter up to 10 golf scores, which are to be stored in an array.Y ou should provide a means for the user to terminate input prior to entering 10 scores.The program should display all the scores on one line and report the average score. Handle input, display, and the average calculation with three separate array-processing functions.
-// Date : 18 April 2023
+// a.Write a function that passes a box structure by value and that displays the value of each member.
+// b. Write a function that passes the address of a box structure and that sets the volume member to the product of the other three dimensions.
+// c. Write a simple program that uses these two function
+// Date : 19 April 2023
 
 #include <iostream>
 using namespace std;
 
-double* enterGolf(double* arr, int Size);
-double meanVal(double *arr, int Size);
-void display(double*arr,int Size);
+struct box
+{
+  char maker[40];
+  float height;
+  float width;
+  float length;
+  float volume;
+};
+
+void boxInfo(box a);
+
 int main() 
 {
-  double Arr[] = {0};
-  double* Sco ;
-  Sco = enterGolf(Arr, 10);
-  display(Arr, 10);
-  double res = 0;
-  res = meanVal(Sco, 10);
-  cout << "the mean value is " << res << endl;
+  box BB = {"Master Wang", 1.1, 2.2, 3.3};
+  boxInfo(BB);
 
 
 }
-double* enterGolf( double* arr, int Size)
+
+
+void boxInfo(box a)
 {
-  for(int i =0; i< Size; i++)
-  {
-    cout << "Enter number " << i +1 << " Score" << endl;
-    cin >> arr[i];
-  }
-  return arr;
+  cout << "present the box infor " << endl;
+  cout << "Box maker: " << a.maker << endl;
+  cout << "Box detail: H, W, L: "<< endl;
+  cout << a.height << " " << a.width << " " << a.length << endl;
+  a.volume = a.height * a.width * a.length;
+  cout << "Volume: " << a.volume << endl;
 }
-
-double meanVal(double *arr, int Size)
-{
-  double mean = 0;
-  for(int i = 0; i<Size;i++)
-    mean += arr[i];
-  return mean/Size;
-}
-
-
-void display(double* arr, int Size)
-{
-  cout << "Display Result" << endl;
-  for(int i = 0; i<Size; i++)
-    {
-      cout << arr[i] << endl;
-    }
-}
-
-
 
