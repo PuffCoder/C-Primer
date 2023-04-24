@@ -11,35 +11,66 @@
 #include <iostream>
 using namespace std;
 
-int fill_array(double ar[], int limit);
+double* fill_array(double* arpt, int* limitpt);
+void show_array(const double* arpt, int* n);
+
+const int Max = 5;
 
 int main() 
 {
-  
-
+  double arr[Max] = {0};
+  double* arrayPT = arr;
+  int limit = 5;
+  int* limitPT = &limit;
+  arrayPT = fill_array( arrayPT, limitPT);
+  show_array(arrayPT, limitPT);
 
 }
 
-int fill_array(double ar[], int limit)
+/**
+ * @brief Show all the element in the array
+ * @param An array, number
+ */
+void show_array(const double* arpt, int* n)
+{
+  for (int i = 0; i < *n; i++)
+  {
+    cout << "Property #" << (i+1) << ": $";
+    cout << *arpt << endl;
+    arpt++;
+  }
+  arpt = arpt - *n;
+
+}
+
+/**
+  * @brief Fill the positive number into the array  
+  * @param an array, limite number
+  */
+
+double* fill_array(double* arpt, int* limitpt)
 {
   double temp;
   int i;
-  for (i = 0; i < limit; i++)
+  for(i = 0; i < *limitpt; i++)
   {
     cout << "Enter value #" << (i+1) << ": ";
     cin >> temp;
     if(!cin) // bad input
-     { 
+    {
       cin.clear();
       while (cin.get() != '\n')
         continue;
       cout << "Bad input: input process terminated. \n";
-          break;
-      } else if (temp < 0)  // signal to terminate
-          break;
-        ar[i] = temp;
+        // return arpt;
+        break;
+    } else if (temp < 0)
+        // return arpt;
+        break;
+      *arpt = temp;
+      arpt++;
   }
-    return i;
+  return arpt - i ;
 }
 
 

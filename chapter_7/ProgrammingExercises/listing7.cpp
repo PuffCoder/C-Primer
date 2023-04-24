@@ -39,7 +39,10 @@ int main()
   return 0;
 }
 
-
+/**
+  * @brief Fill the positive number into the array  
+  * @param an array, limite number
+  */
 int fill_array(double ar[], int limit)
 {
   double temp;
