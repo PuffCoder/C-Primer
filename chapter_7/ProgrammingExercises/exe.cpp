@@ -8,7 +8,8 @@ const int SLEN = 30;
 struct student { 
   char fullname[SLEN]; 
   char hobby[SLEN]; 
-  int ooplevel; }; 
+  int ooplevel;
+}; 
 
 // getinfo() has two arguments: 
 // a pointer to the first element of an array of student structures and 
@@ -17,20 +18,49 @@ struct student {
 // The function solicits and stores data about students. 
 // It terminates input upon filling the array or upon encountering a blank line for the student name. 
 // The function returns the actual number of array elements filled.
-int getinfo(student pa[], int n); 
+// int getinfo(student pa[], int n); 
+int getinfo(student pa[], int n)
+{
+  int i=0;
+  for (i = 0; i < n; i++)
+  {
+    while ( cin.get() != '\n') {
+      cin >> pa[i].fullname;
+      cin >> pa[i].hobby;
+    }
+  }
+  return i;
+
+}
+
 // display1() takes a student structure as an argument and displays its contents 
+void display1(student st)
+{
+  cout << " Student Name: " << st.fullname << endl;;
+  cout << " Student hobby: " << st.hobby << endl;
+  cout << " Student ooplevel: " << st.ooplevel<< endl;
+}
 
-void display1(student st); 
 // display2() takes the address of student structure as an argument and displays the structure’s contents 
+void display2(const student * ps)
+{
+  cout << " Student Name: " << ps->fullname << endl;;
+  cout << " Student hobby: " << ps->hobby << endl;
+  cout << " Student ooplevel: " << ps->ooplevel<< endl;
+}
 
-void display2(const student * ps); 
 // display3() takes the address of the first element of an array of student structures and the number of array elements as arguments and displays the contents of the structures 
-void display3(const student pa[], int n); 
+// void display3(const student pa[], int n);
+void display3(const student pa[], int n)
+{
+  cout << "display3 called";
+}
 //
 int main() 
 { 
   cout << "Enter class size: "; 
-  int class_size; cin >> class_size; 
+  int class_size; 
+  cin >> class_size; 
   while (cin.get() != '\n') 
     continue; 
   student * ptr_stu = new student[class_size]; 
@@ -45,3 +75,6 @@ int main()
   cout << "Done\n"; 
   return 0; 
 }
+
+
+
