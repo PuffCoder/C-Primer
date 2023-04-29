@@ -24,10 +24,19 @@ int getinfo(student pa[], int n)
   int i=0;
   for (i = 0; i < n; i++)
   {
-    while ( cin.get() != '\n') {
-      cin >> pa[i].fullname;
-      cin >> pa[i].hobby;
-    }
+    cout << "Enter fullname of student #" << i + 1 << ": ";
+    cin.getline(pa[i].fullname, SLEN);
+    if (pa[i].fullname[0] == '\0')
+      break;
+
+    cout << "Enter hobby of student #" << i + 1 << ": ";
+    cin.getline(pa[i].hobby, SLEN);
+
+    cout << "Enter ooplevel of student #" << i + 1 << ": ";
+    cin >> pa[i].ooplevel;
+    
+    while (cin.get() != '\n')
+      continue;
   }
   return i;
 
@@ -36,25 +45,33 @@ int getinfo(student pa[], int n)
 // display1() takes a student structure as an argument and displays its contents 
 void display1(student st)
 {
-  cout << " Student Name: " << st.fullname << endl;;
-  cout << " Student hobby: " << st.hobby << endl;
-  cout << " Student ooplevel: " << st.ooplevel<< endl;
+  cout << "Display1 Student Name: " << st.fullname << endl;;
+  cout << "Display1 Student hobby: " << st.hobby << endl;
+  cout << "Display1 Student ooplevel: " << st.ooplevel<< endl;
 }
 
 // display2() takes the address of student structure as an argument and displays the structure’s contents 
 void display2(const student * ps)
 {
-  cout << " Student Name: " << ps->fullname << endl;;
-  cout << " Student hobby: " << ps->hobby << endl;
-  cout << " Student ooplevel: " << ps->ooplevel<< endl;
+  cout << "Display2 Student Name: " << ps->fullname << endl;;
+  cout << "Display2 Student hobby: " << ps->hobby << endl;
+  cout << "Display2 Student ooplevel: " << ps->ooplevel<< endl;
 }
 
 // display3() takes the address of the first element of an array of student structures and the number of array elements as arguments and displays the contents of the structures 
 // void display3(const student pa[], int n);
 void display3(const student pa[], int n)
 {
-  cout << "display3 called";
+  cout << "display3 called" << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cout << "Student #" << i + 1<< endl;
+    cout << "Name: " << pa[i].fullname << endl;
+    cout << "Hobby: " << pa[i].hobby << endl;
+    cout << "OOP level: " << pa[i].ooplevel << endl;
+  }
 }
+
 //
 int main() 
 { 
