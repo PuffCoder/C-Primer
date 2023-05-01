@@ -1,17 +1,34 @@
-// Listing 8.4 swaps.cpp -- swapping with references and with pointers
-// Date : 01 May 2023
+// Listing 8.5 cubes.cpp 
+// cubes.cpp -- regular and reference arguments
+// Date : 02 May 2023
 
 #include <iostream>
 using namespace std;
 
-void swapr(int & a, int & b); // a, b are aliases for ints
-void swapp(int * p, int * q); // a, b are aliases for ints
-void swapv(int a, int b); // a, b are aliases for ints
+double cube(double a);
+double refcube(double &ra);
+
 
 int main() 
 {
-  int wallet1 = 300;
-  int wallet2 = 350;
+  double x = 3.0;
 
+  cout << cube(x);
+  cout << " = cube of " << x << endl;
+  cout << refcube(x);
+  cout << " = cube of " << x << endl;
 
+  return 0;
+
+}
+
+double cube(double a)
+{
+  return a *= a * a;
+} 
+
+double refcube (double &ra)
+{
+  ra *= ra * ra;
+  return ra;
 }
