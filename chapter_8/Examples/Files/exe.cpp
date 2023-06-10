@@ -1,82 +1,76 @@
-// Listing 8.13 twoswap.cpp // 
-// twoswap.cpp -- specialization overrides a templat
-// Date : 13 May 2023
+// tempover.cpp -- template overloading
+// Date : 10 June 2023
 
 #include <iostream>
 using namespace std;
 
+template <typename T> 
+void ShowArray(T arr[], int n);
+
 template <typename T>
-void Swap(T &a, T &b);
+void ShowArray(T * arr[], int n);
 
-struct job
+struct debts
 {
-  char name[40];
-  double salary;
-  int floor;
+  char name[20];
+  double amount;
 };
-
-// explicit specialization
-template <> void Swap<job>(job &j1, job &j2);
-
-void Show(job &j);
 
 int main() 
 {
-  cout.precision(2);
-  cout.setf(ios::fixed, ios::floatfield);
-  int i = 10,j = 20;
-  cout << "i , j = " << i << ", " << j << ".\n";
-  
-  job sue = {"Susan Yaffee", 73000.60, 7};
-  job sidney = {"Sidney Taffee", 78060.72, 9};
-  cout << "Before job swapping:\n";
-  Show(sue);
-  Show(sidney);
-  Swap(sue,sidney); // uses void Swap(job &, job&)
-  cout << "After job swapping:\n";
-  Show(sue);
-  Show(sidney);
-  // cin.get();
-  return 0;
+  int things[6] = {13,31, 103, 301, 310,130};
+  struct debts mr_E[3] =
+  {
+    {"Ima Wolfe", 2400.0},
+    {"Ura Foxe", 1300.0},
+    {"Iby Stout", 1800.0}
+  };
+  double * pd[3];
+
+  for (int i = 0; i < 3; i++)
+    pd[i] = &mr_E[i].amount;
+
+    cout << "Listing Mr. E's counts of things:\n";
+    // things is an array of int
+    ShowArray(things,6); // uses template amount
+    cout << "Listing Mr. E's debts:\n";
+    //pd is an array of pointers to double
+    ShowArray(pd,3); // uses template amount
+
+    for ( int i = 0; i < 3; i++)
+    {
+      cout << &pd[i] << endl;
+      /* cout << &mr_E[i].name << " " ; */
+      /* cout << &mr_E[i].amount<< " " ; */
+
+    }
+      /* cout << sizeof(mr_E[0].name )<< " " ; */
+      /* cout << sizeof(mr_E[0].amount)<< " " ; */
+      /* cout << sizeof(mr_E[0])<< " " ; */
+      /* cout << sizeof(debts)<< " " ; */
+    return 0;
+
 
 }
 
 template <typename T>
-void Swap(T &a, T &b)
-{
-  T temp;
-  temp = a;
-  a = b;
-  b = temp;
-}
+void ShowArray(T arr[], int n)
 
-// swaps just the salary and floor fields of a job structure 
-template <> void Swap<job> (job &j1, job &j2) // specialization
 {
-  double t1;
-  int t2;
-  t1 = j1.salary;
-  j1.salary = j2.salary;
-  j2.salary = t1;
-  t2 = j1.floor;
-  j1.floor = j2.floor;
-  j2.floor = t2;
-}
-void Show(job &j)
-{
-  cout << j.name << ": $" << j.salary << " on floor " << j.floor << endl;
+  cout << "template A\n";
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << ' ' ;
+  cout << endl;
 }
 
 
+template <typename T>
+void ShowArray(T * arr[], int n)
+{
+  cout << "template B\n";
+  for (int i = 0; i < n; i++)
+    cout << *arr[i] << ' ' ;
+  cout << endl;
 
-
-
-
-
-
-
-
-
-
-
-
+}
+  
